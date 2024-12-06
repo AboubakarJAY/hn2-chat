@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { DEFAULT_USER } from "../constantes/constantes"; // Import des valeurs par défaut
+import { DEFAULT_USER } from "../constantes/constantes";
 
 const EnTete = () => {
   const router = useRouter();

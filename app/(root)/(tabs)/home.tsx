@@ -1,8 +1,8 @@
 // import EnTete from "@/app/components/EnTete";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
-import React, { useEffect, useRef, useState } from "react";
-import { Animated, Text, TouchableOpacity, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Home = () => {
@@ -10,7 +10,6 @@ const Home = () => {
   const [userData, setUserData] = useState(null);
   const [events, setEvents] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
-  const scrollY = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,35 +48,14 @@ const Home = () => {
     fetchData();
   }, []);
 
-  // Animation d'opacité qui disparaît après 50 pixels de scroll
-  const opacity = scrollY.interpolate({
-    inputRange: [0, 50],
-    outputRange: [1, 0],
-    extrapolate: "clamp",
-  });
-
   return (
     <SafeAreaView className="flex-1 bg-white">
-      {/* <EnTete nomPage="Home" /> */}
       <View className="flex-1 items-center justify-center">
         {errorMessage ? (
           <Text className="text-white">{errorMessage}</Text>
         ) : null}
 
-        {/* <ScrollView
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-            { useNativeDriver: true }
-          )}
-          scrollEventThrottle={16}
-          className="flex-1"
-        ></ScrollView> */}
-        <Text className="text-black">Salut</Text>
-
-        {/* Image flottante avec effet de disparition et navigation */}
-        <TouchableOpacity
-        //   onPress={() => router.push("/(root)/(tabs)/createEvent")}
-        ></TouchableOpacity>
+        <Text className="text-black flex-1">Salut</Text>
       </View>
     </SafeAreaView>
   );

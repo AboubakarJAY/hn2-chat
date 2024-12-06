@@ -1,22 +1,33 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AnimatedPage from "../../components/animation/AnimatedPage";
-import ProfilePage from "./index";
+import { createStackNavigator } from "@react-navigation/stack";
+import ProfilePage from ".";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
-const ModalsLayout = () => {
+const customTransition = ({ current, next, layouts }: any) => {
+  const translateY = current.progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [layouts.screen.height, 0], // Slide depuis le bas
+  });
+
+  return {
+    cardStyle: {
+      transform: [{ translateY }],
+    },
+  };
+};
+
+const ProfileLayout = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        presentation: "modal",
-        animation: "slide_from_right",
+        gestureEnabled: true,
         headerShown: false,
+        cardStyleInterpolator: customTransition, // Transition personnalisée
       }}
     >
       <Stack.Screen name="Profile" component={ProfilePage} />
-      <Stack.Screen name="AnimatedPage" component={AnimatedPage} />
     </Stack.Navigator>
   );
 };
 
-export default ModalsLayout;
+export default ProfileLayout;

@@ -2,7 +2,14 @@ import AnimatedInputField from "@/components/AnimatedInputField";
 import AsyncStorage from "@react-native-async-storage/async-storage"; // Importer AsyncStorage
 import { router } from "expo-router";
 import { useState } from "react";
-import { Alert, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  ScrollView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const SignIn = () => {
@@ -90,6 +97,7 @@ const SignIn = () => {
 
   return (
     <ScrollView className="flex-1 bg-white">
+      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
       <SafeAreaView className="flex-1 mt-5 px-5 bg-gray-50 rounded-lg">
         <TouchableOpacity
           className="mb-4"

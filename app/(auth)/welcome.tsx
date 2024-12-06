@@ -5,6 +5,7 @@ import {
   Dimensions,
   FlatList,
   Image,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -22,7 +23,7 @@ const slides = [
   },
   {
     id: "2",
-    image: require("../../assets/images/icon.png"),
+    image: require("../../assets/images/profile.jpg"),
     title: "Partagez des moments",
     description: "Créez et partagez vos souvenirs en toute simplicité.",
   },
@@ -79,6 +80,15 @@ export default function Onboarding() {
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
+      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
+
+      <TouchableOpacity
+        onPress={() => router.replace("/(auth)/signUp")}
+        className="absolute flex z-10 right-2 top-2 self-end w-14 items-center rounded-full bg-slate-300"
+      >
+        <Text className="text-gray-600 text-center">passer</Text>
+      </TouchableOpacity>
+
       {/* Slider */}
       <FlatList
         data={slides}

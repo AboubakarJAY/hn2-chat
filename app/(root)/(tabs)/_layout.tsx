@@ -7,11 +7,10 @@ const TabLayout = () => {
   return (
     <SafeAreaView className="flex-1 bg-white">
       {/* Barre d'état (Statut du téléphone) */}
-      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
 
       {/* En-tête de l'application */}
       <EnTete />
-
+      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
       {/* Contenu de la page */}
       <Slot />
 

@@ -6,6 +6,7 @@ import {
   Alert,
   BackHandler,
   ScrollView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -121,6 +122,7 @@ const SignUp = () => {
 
   return (
     <ScrollView className="flex-1 bg-white">
+      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
       <SafeAreaView className="flex-1 mt-5 px-5 bg-gray-50 rounded-lg">
         {/* En-tête */}
         <TouchableOpacity

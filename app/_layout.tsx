@@ -2,16 +2,20 @@ import { Stack } from "expo-router";
 
 const RootLayout = () => {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       {/* Navigation principale */}
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
-      {/* Navigation pour les modales */}
+      {/* Navigation modale */}
       <Stack.Screen
-        name="(modals)"
+        name="(modal)"
         options={{
-          presentation: "modal", // Animation modale
-          headerShown: false, // Pas de header natif
+          presentation: "modal", // Transition modale
+          headerShown: false,
         }}
       />
     </Stack>
