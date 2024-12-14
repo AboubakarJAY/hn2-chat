@@ -80,7 +80,7 @@ export default function Onboarding() {
 
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
-      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
+      <StatusBar barStyle="light-content" backgroundColor="#000000" />
 
       <TouchableOpacity
         onPress={() => router.replace("/(auth)/signUp")}
@@ -120,7 +120,7 @@ export default function Onboarding() {
           <View
             key={index}
             className={`h-2 w-2 rounded-full mx-1 ${
-              index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+              index === currentIndex ? "bg-black" : "bg-gray-300"
             }`}
           />
         ))}
@@ -130,7 +130,7 @@ export default function Onboarding() {
       <View className="flex items-center justify-center mt-8 mb-4">
         <TouchableOpacity
           onPress={handleNext}
-          className="bg-blue-500 w-40 px-8 py-3 rounded-full"
+          className="bg-black w-40 px-8 py-3 rounded-full"
         >
           <Text className="text-white text-center font-bold">
             {currentIndex === slides.length - 1 ? "Get Started" : "Next"}

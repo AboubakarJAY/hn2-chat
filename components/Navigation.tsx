@@ -57,8 +57,8 @@ const Navigation = () => {
         <Image
           source={
             pathname === "/contacts"
-              ? require("../assets/icons/user.png")
-              : require("../assets/icons/user1.png")
+              ? require("../assets/icons/add1.png")
+              : require("../assets/icons/add1.png")
           }
           style={styles.icon}
         />
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "#3B82F6", // Blue-500 en Tailwind
+    backgroundColor: "#000000", // Blue-500 en Tailwind
     height: 60,
     position: "absolute",
     bottom: 0,

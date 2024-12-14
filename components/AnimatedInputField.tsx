@@ -53,7 +53,7 @@ const AnimatedInputField: React.FC<AnimatedInputFieldProps> = ({
     }),
     color: animatedLabel.interpolate({
       inputRange: [0, 1],
-      outputRange: error ? ["#DC2626", "#DC2626"] : ["#9CA3AF", "#3B82F6"], // Couleur pour l'erreur ou normal
+      outputRange: error ? ["#DC2626", "#DC2626"] : ["#9CA3AF", "#000000"], // Couleur pour l'erreur ou normal
     }),
   };
 
@@ -98,11 +98,10 @@ const styles = StyleSheet.create({
   input: {
     height: 50,
     borderBottomWidth: 1,
-    borderBottomColor: "#9CA3AF",
+    borderBottomColor: "#000000",
     fontSize: 16,
-    color: "#111827",
+    color: "#000000",
     paddingHorizontal: 10,
   },
 });
-
 export default AnimatedInputField;

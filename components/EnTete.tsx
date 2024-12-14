@@ -28,7 +28,7 @@ const EnTete = () => {
   }, []);
 
   return (
-    <View className="flex flex-row items-center justify-between p-4 bg-blue-500 h-28 border-b border-gray-400">
+    <View className="flex flex-row items-center justify-between p-4 bg-black h-28 border-b border-gray-400">
       {/* Image de profil à gauche */}
       <TouchableOpacity onPress={() => router.push("/(modal)")}>
         <Image source={user.profilePicture} className="w-12 h-12 rounded-lg" />
@@ -43,7 +43,10 @@ const EnTete = () => {
       </View>
 
       {/* Notifications à droite */}
-      <TouchableOpacity className="relative w-10 h-10">
+      <TouchableOpacity
+        className="relative w-10 h-10"
+        onPress={() => router.push("/notification")}
+      >
         {/* Image de la cloche */}
         <Image
           source={require("../assets/icons/bell.png")}

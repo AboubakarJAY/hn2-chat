@@ -10,7 +10,7 @@ const TabLayout = () => {
 
       {/* En-tête de l'application */}
       <EnTete />
-      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
+      <StatusBar barStyle="light-content" backgroundColor="#000000" />
       {/* Contenu de la page */}
       <Slot />
 

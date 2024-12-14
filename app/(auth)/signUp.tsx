@@ -122,7 +122,7 @@ const SignUp = () => {
 
   return (
     <ScrollView className="flex-1 bg-white">
-      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
+      <StatusBar barStyle="light-content" backgroundColor="#000000" />
       <SafeAreaView className="flex-1 mt-5 px-5 bg-gray-50 rounded-lg">
         {/* En-tête */}
         <TouchableOpacity
@@ -133,7 +133,7 @@ const SignUp = () => {
         </TouchableOpacity>
 
         <View className="items-center">
-          <Text className="font-black text-3xl text-blue-500">Bienvenue</Text>
+          <Text className="font-black text-3xl text-black">Bienvenue</Text>
           <Text className="text-lg text-gray-600 mt-2 text-center">
             Inscrivez-vous pour commencer.
           </Text>
@@ -182,7 +182,7 @@ const SignUp = () => {
         <View className="mt-10 flex items-center">
           <TouchableOpacity
             onPress={submitForm}
-            className="bg-blue-500 w-3/4 px-8 py-3 rounded-full"
+            className="bg-black w-3/4 px-8 py-3 rounded-lg"
           >
             <Text className="text-white text-center font-bold">
               Créer le compte
@@ -196,7 +196,7 @@ const SignUp = () => {
             onPress={() => router.replace("/(auth)/signIn")}
             className="mt-2"
           >
-            <Text className="text-blue-500 font-black">Connectez-vous</Text>
+            <Text className="text-black font-black">Connectez-vous</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

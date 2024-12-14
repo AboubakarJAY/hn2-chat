@@ -97,7 +97,7 @@ const SignIn = () => {
 
   return (
     <ScrollView className="flex-1 bg-white">
-      <StatusBar barStyle="light-content" backgroundColor="#3B82F6" />
+      <StatusBar barStyle="light-content" backgroundColor="#000000" />
       <SafeAreaView className="flex-1 mt-5 px-5 bg-gray-50 rounded-lg">
         <TouchableOpacity
           className="mb-4"
@@ -109,7 +109,7 @@ const SignIn = () => {
         </TouchableOpacity>
         <View className="items-center">
           <View className="items-center">
-            <Text className="font-black text-3xl text-blue-500">
+            <Text className="font-black text-3xl text-black">
               Heureux de vous revoir
             </Text>
             <Text className="text-lg text-gray-600 mt-2 text-center">
@@ -146,7 +146,7 @@ const SignIn = () => {
         <View className="mt-10 flex items-center">
           <TouchableOpacity
             onPress={submitForm}
-            className="bg-blue-500 w-3/4 px-8 py-3 rounded-full"
+            className="bg-black w-3/4 px-8 py-3 rounded-lg"
           >
             <Text className="text-white text-center font-bold">
               Se connecter
@@ -162,7 +162,7 @@ const SignIn = () => {
             // router.replace("/(root)/(tabs)/home"); //Ajouter pour rediriger vers la page d'acceuil meme sans etre connecter
             className="mt-2"
           >
-            <Text className="text-blue-500 font-black">Inscrivez-vous</Text>
+            <Text className="text-black font-black">Inscrivez-vous</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
