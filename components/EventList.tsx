@@ -18,10 +18,18 @@ interface Event {
 const EventList = () => {
   const [events, setEvents] = useState<Event[]>(DEFAULT_EVENTS); // Charger les événements par défaut
   const [loading, setLoading] = useState(true); // État de chargement
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false); // Savoir si les données ont été chargées une fois
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
+        // Vérifier si les données ont déjà été chargées
+        const storedHasLoaded = await AsyncStorage.getItem("hasLoadedOnce");
+        if (storedHasLoaded) {
+          setHasLoadedOnce(true);
+          setLoading(false); // Pas besoin de réafficher les animations
+        }
+
         // Étape 1 : Récupérer les événements dans le local storage
         const storedData = await AsyncStorage.getItem("userData");
         if (storedData) {
@@ -49,6 +57,10 @@ const EventList = () => {
       } finally {
         // Arrêter l'état de chargement dans tous les cas
         setLoading(false);
+        if (!hasLoadedOnce) {
+          setHasLoadedOnce(true);
+          await AsyncStorage.setItem("hasLoadedOnce", "true"); // Enregistrer l'état chargé
+        }
       }
     };
 
@@ -76,7 +88,7 @@ const EventList = () => {
 
   return (
     <ScrollView className="flex-1 p-4">
-      {loading
+      {loading && !hasLoadedOnce
         ? renderLoadingCards()
         : events.map((event, index) => (
             <EventCard
