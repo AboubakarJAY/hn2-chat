@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   FlatList,
   Image,
+  Modal,
   Text,
   TextInput,
   TouchableOpacity,
@@ -40,6 +41,7 @@ const EventCard: React.FC<EventCardProps> = ({
   description,
   nombreParticipants,
 }) => {
+  const [isImageModalVisible, setImageModalVisible] = useState(false);
   const [isParticipating, setIsParticipating] = useState(false); // État pour "Participer"/"Annuler"
   const [participants, setParticipants] = useState(nombreParticipants); // Nombre de participants
   const [showComments, setShowComments] = useState(false); // Afficher/masquer la section de commentaires
@@ -117,7 +119,7 @@ const EventCard: React.FC<EventCardProps> = ({
         onPress={() => setShowComments(!showComments)}
         className="mt-4"
       >
-        <StyledText className="text-blue-400 font-bold">
+        <StyledText className="text-blue-700 font-bold">
           {showComments
             ? "Masquer les commentaires"
             : "Afficher les commentaires"}
@@ -146,6 +148,26 @@ const EventCard: React.FC<EventCardProps> = ({
               </StyledView>
             )}
           />
+          <Modal
+            visible={isImageModalVisible}
+            transparent={true}
+            animationType="fade"
+            onRequestClose={() => setImageModalVisible(false)}
+          >
+            <View className="flex-1 bg-black justify-center items-center">
+              <TouchableOpacity
+                style={{ position: "absolute", top: 40, right: 20 }}
+                onPress={() => setImageModalVisible(false)}
+              >
+                <Text className="text-white text-2xl">×</Text>
+              </TouchableOpacity>
+              <Image
+                source={image}
+                className="w-full h-4/5"
+                resizeMode="contain"
+              />
+            </View>
+          </Modal>
 
           {/* Formulaire pour ajouter un commentaire */}
           <StyledView className="border-t border-gray-600 pt-4 mt-4">

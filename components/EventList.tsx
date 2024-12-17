@@ -87,7 +87,7 @@ const EventList = () => {
   );
 
   return (
-    <ScrollView className="flex-1 p-4">
+    <ScrollView className="flex-1 px-4 pt-4 pb-12">
       {loading && !hasLoadedOnce
         ? renderLoadingCards()
         : events.map((event, index) => (

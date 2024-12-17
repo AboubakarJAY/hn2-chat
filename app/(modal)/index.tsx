@@ -51,7 +51,7 @@ const ProfilePage = () => {
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [1, 1],
-        quality: 0.8,
+        quality: 0.9,
       });
 
       if (!result.canceled) {
@@ -106,7 +106,7 @@ const ProfilePage = () => {
             <Text className="font-black text-2xl text-white">&larr;</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => router.push("/edit")}
+            onPress={() => router.push("/EditProfile")}
             className="bg-transparent"
           >
             <Image

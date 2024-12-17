@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Alert, Button, Text, TextInput, View } from "react-native";
+import { Alert, Button, Text, TextInput } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const EditProfile = () => {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ const EditProfile = () => {
   };
 
   return (
-    <View className="flex-1 p-4">
+    <ScrollView className="flex-1 p-4 bg-white">
       <Text className="text-lg font-bold">Modifier le profil</Text>
       <TextInput
         placeholder="Nom"
@@ -32,7 +33,7 @@ const EditProfile = () => {
         className="border p-2 mt-4"
       />
       <Button title="Sauvegarder" onPress={handleSave} />
-    </View>
+    </ScrollView>
   );
 };
 
