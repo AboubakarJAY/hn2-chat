@@ -20,13 +20,13 @@ const EditProfile = () => {
     <ScrollView className="flex-1 p-4 bg-white">
       <Text className="text-lg font-bold">Modifier le profil</Text>
       <TextInput
-        placeholder="Nom"
+        placeholder="Votre nom"
         value={name}
         onChangeText={setName}
         className="border p-2 mt-4"
       />
       <TextInput
-        placeholder="Mot de passe"
+        placeholder="Entrer le mot de passe"
         value={password}
         secureTextEntry
         onChangeText={setPassword}
