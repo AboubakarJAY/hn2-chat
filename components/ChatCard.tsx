@@ -30,18 +30,34 @@ const ChatCard: React.FC<ChatCardProps> = ({
       onPress={onPress}
     >
       <StyledImage
-        source={{ uri: profilePicture }}
+        source={
+          profilePicture
+            ? { uri: profilePicture }
+            : require("@/assets/images/icon.png")
+        }
         className="w-12 h-12 rounded-full"
       />
       <StyledView className="flex-1 ml-4">
-        <StyledText className="text-white font-bold">{name}</StyledText>
-        <StyledText className="text-gray-400">{lastMessage}</StyledText>
+        <StyledText
+          className="text-white font-bold"
+          numberOfLines={1}
+          ellipsizeMode="tail"
+        >
+          {name}
+        </StyledText>
+        <StyledText
+          className="text-gray-400"
+          numberOfLines={1}
+          ellipsizeMode="tail"
+        >
+          {lastMessage}
+        </StyledText>
       </StyledView>
       <StyledView className="items-end">
-        <StyledText className="text-gray-400">{timestamp}</StyledText>
+        <StyledText className="text-gray-400 text-sm">{timestamp}</StyledText>
         {unreadCount > 0 && (
-          <StyledView className="bg-green-500 rounded-full px-2 py-1">
-            <StyledText className="text-white text-xs">
+          <StyledView className="bg-green-500 rounded-full px-2 py-1 mt-1">
+            <StyledText className="text-white text-xs font-bold">
               {unreadCount}
             </StyledText>
           </StyledView>
